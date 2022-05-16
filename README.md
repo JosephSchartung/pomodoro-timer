@@ -1,1 +1,1 @@
-# porodomo-timer
+# pomodoro-timer
