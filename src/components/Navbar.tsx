@@ -4,7 +4,7 @@ export const Navbar = () => {
     
     return (
         <div className="Navbar">
-            <h1 style={{textAlign:"center"}}>Podomoro Timer</h1>
+            <h1 style={{textAlign:"center"}}>Pomodoro Timer</h1>
         </div>
     )
 }
