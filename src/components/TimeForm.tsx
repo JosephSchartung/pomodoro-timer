@@ -37,10 +37,10 @@ export const TimeForm: React.FC<Props> = ({addPomodoro}) => {
     return(
         <div className="TimeForm">
             <form>
-                <input type="number" value={workTime} onChange={handleChangeWorkTime} />
-                <input type="number" value={shortBreakTime} onChange={handleChangeShortBreakTime} />
-                <input type="number" value={numberOfPomodoros} onChange={handleChangeNumberOfPomodoros} />
-                <input type="number" value={longBreakTime} onChange={handleChangeLongBreakTime} />
+                <input type="number" placeholder="Working Time" onChange={handleChangeWorkTime} />
+                <input type="number" placeholder="Short Break Time" onChange={handleChangeShortBreakTime} />
+                <input type="number" placeholder="No. of Pomodoros" onChange={handleChangeNumberOfPomodoros} />
+                <input type="number" placeholder="Long Break Time" onChange={handleChangeLongBreakTime} />
                 <button type="submit" onClick={handleSubmit}>Set Pomodoro</button>
             </form>
         </div>
