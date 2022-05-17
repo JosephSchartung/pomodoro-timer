@@ -5,7 +5,7 @@ interface Props {
 }
 export const Timer: React.FC<Props> = ({pomodoro}) => {
     const convertTimeToArray = (time:number) => {
-        return new Array(time, 0);
+        return [time, 0];
     }
     const phases = ["Work Time", "Short Break Time", "Long Break Time"];
 

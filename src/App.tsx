@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { TimeForm } from './components/TimeForm';
 import { Timer } from './components/Timer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Landing } from './components/Landing';
 
 function App() {
   const defaultPomodoro: Pomodoro ={
@@ -11,21 +13,22 @@ function App() {
     longBreakTime: 30
   }
   const [pomodoroInfo, setPomodoroInfo] = useState(defaultPomodoro);
-  const [showForm, setShowForm] = useState(true);
-
   const addPomodoro: addPomodoro = (pomodoroInfo:Pomodoro) => {
     setPomodoroInfo(pomodoroInfo);
-    setShowForm(false);
   }
 
 
   return (
-    <div className="App">
-      <Navbar />
-      {
-        showForm ? <TimeForm addPomodoro={addPomodoro}/> : <Timer pomodoro={pomodoroInfo}/>
-      }
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/start" element={<TimeForm addPomodoro={addPomodoro}/>}/>
+          <Route path="/timer" element={<Timer pomodoro={pomodoroInfo}/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
