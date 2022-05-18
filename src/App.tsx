@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Landing } from './components/Landing';
 
 function App() {
-  const defaultPomodoro: Pomodoro ={
+  const defaultPomodoro: Pomodoro = {
     workTime: 25,
     shortBreakTime: 5,
     numberOfPomodoros: 4,
-    longBreakTime: 30
+    longBreakTime: 15
   }
   const [pomodoroInfo, setPomodoroInfo] = useState(defaultPomodoro);
   const addPomodoro: addPomodoro = (pomodoroInfo:Pomodoro) => {

@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export const Landing = () => {
     return(
-        <div className="container">
-            <Link to="/start">Start a timer</Link>
-            
+        <div style={{ height:"50vh" }} className="container valign-wrapper">
+            <div className="row">
+                <div className="col s12 center-align">
+                    <h4>
+                        <b>Pomodoro</b> timer.
+                    </h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo ab, harum nostrum tempora quod similique cum, unde voluptatum, repellat ipsa saepe libero excepturi! Distinctio ad, expedita aperiam dolorem ipsum corrupti!</p>
+                </div>
+            </div>
+
         </div>
     )
 }

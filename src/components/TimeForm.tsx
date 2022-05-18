@@ -46,11 +46,14 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                         <div className="col s12 m6 offset-m3">
                             <div className="card">
                                 <div className="card-content">
-                                    <span className="card-title black-text">Add Pomodoro</span>
+                                    <span className="card-title black-text">
+                                        <b>Set</b> Pomodoro
+                                    </span>
                                         <form>
                                             <div className="row">
                                                 <div className="input-field col s12">
-                                                    <input type="number" placeholder="Working Time (mins)" onChange={handleChangeWorkTime} />
+                                                    <input type="number" placeholder="Working Time (mins)"
+                                                    onChange={handleChangeWorkTime} />
                                                 </div>
                                             </div>
                                             <div className="row">
