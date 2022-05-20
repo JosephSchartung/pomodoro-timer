@@ -51,24 +51,38 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                                     </span>
                                         <form>
                                             <div className="row">
+                                                <label>Working Time (mins)</label>
                                                 <div className="input-field col s12">
-                                                    <input type="number" placeholder="Working Time (mins)"
+                                                    <input type="number"
+                                                    value={workTime}
                                                     onChange={handleChangeWorkTime} />
                                                 </div>
                                             </div>
                                             <div className="row">
+                                                <label htmlFor="shortBreakTime">Short Break Time (mins)</label>
                                                 <div className="input-field col s12">
-                                                    <input type="number" placeholder="Short Break Time (mins)" onChange={handleChangeShortBreakTime} />
+                                                    <input type="number"
+                                                    id="shortBreakTime"
+                                                    value={shortBreakTime}
+                                                    onChange={handleChangeShortBreakTime} />
                                                 </div>
                                             </div>
                                             <div className="row">
+                                                <label htmlFor="pomodoroNumber">No. of Pomodoros</label>
                                                 <div className="input-field col s12">
-                                                    <input type="number" placeholder="No. of Pomodoros" onChange={handleChangeNumberOfPomodoros} />
+                                                    <input type="number" 
+                                                    id="pomodoroNumber"
+                                                    value={numberOfPomodoros}
+                                                    onChange={handleChangeNumberOfPomodoros} />
                                                 </div>
                                             </div>
                                             <div className="row">
+                                                <label htmlFor="longBreak">Long Break Time (mins)</label>
                                                 <div className="input-field col s12">
-                                                    <input type="number" placeholder="Long Break Time (mins)" onChange={handleChangeLongBreakTime} />
+                                                    <input type="number" 
+                                                    id="longBreak"
+                                                    value={longBreakTime}
+                                                    onChange={handleChangeLongBreakTime} />
                                                 </div>
                                             </div>
                                         </form>
@@ -85,9 +99,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }
