@@ -13,7 +13,7 @@ function App() {
     longBreakTime: 15
   }
   const [pomodoroInfo, setPomodoroInfo] = useState(defaultPomodoro);
-  const addPomodoro: addPomodoro = (pomodoroInfo:Pomodoro) => {
+  const addPomodoro: AddPomodoro = (pomodoroInfo:Pomodoro) => {
     setPomodoroInfo(pomodoroInfo);
   }
 
