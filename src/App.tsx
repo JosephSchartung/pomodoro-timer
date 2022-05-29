@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Landing } from './components/Landing';
 import { Dashboard } from './components/Dashboard';
 
-function App() {
+const App: React.FC = () => {
   const defaultPomodoro: Pomodoro = {
     workTime: 25,
     shortBreakTime: 5,
@@ -16,7 +16,6 @@ function App() {
   const addPomodoro: AddPomodoro = (pomodoroInfo:Pomodoro) => {
     setPomodoroInfo(pomodoroInfo);
   }
-
 
   return (
     <Router>

@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 import { AddTodoForm } from './AddTodoForm';
 import { TodoList } from './TodoList';
 
@@ -39,7 +39,22 @@ export const Todos: React.FC = () => {
     const updateTodo: UpdateTodo = (selectedTodo: Todo, updatedTodo: Todo) => {
         let newTodos = todos.filter(todo => {return todo!== selectedTodo});
         newTodos.push(updatedTodo);
+        newTodos.sort(compareTodos)
         setTodos(newTodos);
+    }
+
+    const compareTodos = (a: Todo, b: Todo) => {
+        const todoA: number = a.id;
+        const todoB: number = b.id;
+        
+        let comp = 0;
+        if(todoA > todoB) {
+            comp = 1;
+        } else {
+            comp = -1;
+        }
+
+        return comp;
     }
 
 
