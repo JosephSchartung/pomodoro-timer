@@ -22,7 +22,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, removeTodo, up
                     toggleTodo(todo);
                 }}
                 />{' '}
-                {todo.description}
+                <h6>{todo.description}</h6>
             </label>
             <button onClick={() => {
                 setShowInput(!showInput)

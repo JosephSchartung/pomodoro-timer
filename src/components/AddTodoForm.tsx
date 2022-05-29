@@ -23,7 +23,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
     return (
         <form>
             <input type="text" value={desc} onChange={handleChange}/>
-            <button onClick={handleSubmit}>Add Todo</button>
+            <button onClick={handleSubmit}>Add Task</button>
         </form>
     )
 }
