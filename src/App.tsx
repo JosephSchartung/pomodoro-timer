@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { TimeForm } from './components/TimeForm';
-import { Timer } from './components/Timer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Landing } from './components/Landing';
 import { Dashboard } from './components/Dashboard';
