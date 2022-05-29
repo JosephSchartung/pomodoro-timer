@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
-    addPomodoro: addPomodoro;
+    addPomodoro: AddPomodoro;
     
 }
 export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
@@ -36,7 +36,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
             longBreakTime: longBreakTime,
         }
         addPomodoro(newPomodoro);
-        navigate('/timer');
+        navigate('/dashboard');
     }
     return(
         <div className="valign-wrapper" style={{width:"100%", height:"100%", position:"absolute"}}>

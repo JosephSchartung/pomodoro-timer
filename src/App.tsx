@@ -4,6 +4,7 @@ import { TimeForm } from './components/TimeForm';
 import { Timer } from './components/Timer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Landing } from './components/Landing';
+import { Dashboard } from './components/Dashboard';
 
 function App() {
   const defaultPomodoro: Pomodoro = {
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<TimeForm addPomodoro={addPomodoro}/>}/>
-          <Route path="/timer" element={<Timer pomodoro={pomodoroInfo}/>}/>
+          <Route path="/dashboard" element={<Dashboard pomodoroInfo={pomodoroInfo}/>}/>
         </Routes>
       </div>
     </Router>

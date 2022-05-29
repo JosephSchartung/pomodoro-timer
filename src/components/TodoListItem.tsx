@@ -8,7 +8,7 @@ interface Props {
     updateTodo: UpdateTodo;
 };
 
-export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, removeTodo, updateTodo }) => {
+export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, removeTodo, updateTodo })=> {
     const [showInput, setShowInput] = useState(false);
 
     return(

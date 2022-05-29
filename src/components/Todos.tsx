@@ -1,6 +1,19 @@
 import react, { useState } from 'react';
+import { AddTodoForm } from './AddTodoForm';
+import { TodoList } from './TodoList';
 
-const initialTodos: Todo[] = [];
+const initialTodos: Todo[] = [
+    {
+        description:"Write app",
+        completed:false,
+        id:Date.now()
+    },
+    {
+        description:"Fix all the bugs",
+        completed:true,
+        id:Date.now()
+    }
+];
 
 export const Todos: React.FC = () => {
     const [todos, setTodos] = useState(initialTodos);
@@ -31,8 +44,30 @@ export const Todos: React.FC = () => {
 
 
     return (
-        <div className="Todos">
+
+        <div className="container valign-wrapper center-align">
+            <div className="row">
+                <div className="col s12">
+                    <div className="card">
+                        <div className="card-content">
+                            <span className="card-title black-text">
+                                <b>Tasks</b>
+                            </span>
+                            <div className="row">
+                                <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
+                            </div>
+                        </div>
+                        <div className="card-action">
+                            <AddTodoForm addTodo={addTodo}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
+        // <div className="Todos">
+        //     <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
+        //     <AddTodoForm addTodo={addTodo} />
+        // </div>
     )
 } 

@@ -8,7 +8,7 @@ interface Pomodoro {
 interface Todo {
     description: string,
     completed: boolean,
-    id: string
+    id: number
 }
 
 
