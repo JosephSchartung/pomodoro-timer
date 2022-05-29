@@ -27,7 +27,7 @@ export const UpdateTodoListItem: React.FC<Props> = ({ todo, updateTodo}) => {
     return (
         <form>
             <input type="text" value={text} onChange={handleChange}/>
-            <button onSubmit={handleSubmit}>Update</button>
+            <button type="button" onClick={handleSubmit}>Update</button>
         </form>
     )
 }
