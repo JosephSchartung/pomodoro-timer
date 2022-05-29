@@ -44,17 +44,7 @@ export const Todos: React.FC = () => {
     }
 
     const compareTodos = (a: Todo, b: Todo) => {
-        const todoA: number = a.id;
-        const todoB: number = b.id;
-        
-        let comp = 0;
-        if(todoA > todoB) {
-            comp = 1;
-        } else {
-            comp = -1;
-        }
-
-        return comp;
+        return a.id > b.id ? 1 : -1;
     }
 
 
