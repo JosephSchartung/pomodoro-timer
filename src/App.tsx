@@ -4,6 +4,7 @@ import { TimeForm } from './components/TimeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Landing } from './components/Landing';
 import { Dashboard } from './components/Dashboard';
+import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   const defaultPomodoro: Pomodoro = {
@@ -19,13 +20,14 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="App">
+      <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<TimeForm addPomodoro={addPomodoro}/>}/>
           <Route path="/dashboard" element={<Dashboard pomodoroInfo={pomodoroInfo}/>}/>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
