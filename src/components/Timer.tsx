@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     pomodoro: Pomodoro;
@@ -8,6 +9,7 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
         return [time, 0];
     }
     const phases = ["Work Time", "Short Break Time", "Long Break Time"];
+    const navigate = useNavigate();
 
     const { workTime, shortBreakTime, numberOfPomodoros, longBreakTime } = pomodoro;
     const [pomodorosRemaining, setPomodorosRemaining] = useState(numberOfPomodoros);
@@ -54,7 +56,7 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
                 setPomodorosRemaining(pomodorosRemaining-1);
                 break;
             case phases[2]:
-                
+                navigate('/start');
                 break;
             default:
                 break;
@@ -72,27 +74,29 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
         <div className="container valign-wrapper center-align">
             <div className="row">
                 <div className="col s12">
-                    <div className="card">
+                    <div className="card red">
                         <div className="card-content">
-                            <span className="card-title black-text">
+                            <span className="card-title white-text">
                                 <b>Pomodoros</b> Remaining: {pomodorosRemaining}
                             </span>
                                 <div className="row">
-                                    <span className="black-text">
+                                    <span className="white-text">
                                         Current Phase: {currentPhase}
                                     </span>
                                 </div>
                                 <div className="row" style={{textAlign:"center"}}>
-                                    <span className="black-text">
-                                        {
-                                            `${timeRemaining[0].toString().padStart(2,'0')}: 
-                                            ${timeRemaining[1].toString().padStart(2,'0')}`
-                                        }
+                                    <span className="white-text">
+                                        <h4>
+                                            {
+                                                `${timeRemaining[0].toString().padStart(2,'0')}: 
+                                                ${timeRemaining[1].toString().padStart(2,'0')}`
+                                            }
+                                        </h4>
                                     </span>
                                 </div>
                         </div>
                         <div className="card-action">
-                            <button className="btn btn-large waves-effect waves-light hoverable accent-3" onClick={toggleTimer}>{timerTicking ? <i className="material-icons">pause</i> : <i className="material-icons">play_arrow</i>}</button>
+                            <button className="btn btn-small waves-effect waves-light hoverable accent-2 red" onClick={toggleTimer}>{timerTicking ? <i className="material-icons">pause</i> : <i className="material-icons">play_arrow</i>}</button>
                         </div>
                     </div>
 

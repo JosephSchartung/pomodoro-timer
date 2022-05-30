@@ -26,8 +26,8 @@ export const UpdateTodoListItem: React.FC<Props> = ({ todo, updateTodo}) => {
     }
     return (
         <form>
-            <input type="text" value={text} onChange={handleChange}/>
-            <button type="button" onClick={handleSubmit}>Update</button>
+            <input className="white-text" type="text" value={text} onChange={handleChange}/>
+            <button className="btn btn-small waves-effect waves-light hoverable accent-2 red" type="button" onClick={handleSubmit}>Update</button>
         </form>
     )
 }

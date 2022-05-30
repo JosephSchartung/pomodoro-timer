@@ -6,7 +6,7 @@ export const Navbar: React.FC = () => {
     return (
         <div className="navbar-fixed">
             <nav>
-                <div className="nav-wrapper">
+                <div className="nav-wrapper red">
                     <Link to="/" className="brand-logo center">Pomodoro</Link>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>

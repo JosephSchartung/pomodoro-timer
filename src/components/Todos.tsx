@@ -53,10 +53,10 @@ export const Todos: React.FC = () => {
         <div className="container valign-wrapper center-align">
             <div className="row">
                 <div className="col s12">
-                    <div className="card">
+                    <div className="card red">
                         <div className="card-content">
-                            <span className="card-title black-text">
-                                <b>Tasks</b>
+                            <span className="card-title white-text">
+                                <b>Set</b> Tasks
                             </span>
                             <div className="row">
                                 <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
@@ -68,11 +68,6 @@ export const Todos: React.FC = () => {
                     </div>
                 </div>
             </div>
-
         </div>
-        // <div className="Todos">
-        //     <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
-        //     <AddTodoForm addTodo={addTodo} />
-        // </div>
     )
 } 

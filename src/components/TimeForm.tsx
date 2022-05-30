@@ -44,45 +44,53 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m6 offset-m3">
-                            <div className="card">
+                            <div className="card red">
                                 <div className="card-content">
-                                    <span className="card-title black-text">
+                                    <span className="card-title white-text">
                                         <b>Set</b> Pomodoro
                                     </span>
                                         <form>
                                             <div className="row">
-                                                <label>Working Time (mins)</label>
+                                                <label className="white-text">Working Time (mins)</label>
                                                 <div className="input-field col s12">
                                                     <input type="number"
                                                     value={workTime}
-                                                    onChange={handleChangeWorkTime} />
+                                                    onChange={handleChangeWorkTime} 
+                                                    className="white-text"
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <label htmlFor="shortBreakTime">Short Break Time (mins)</label>
+                                                <label className="white-text">Short Break Time (mins)</label>
                                                 <div className="input-field col s12">
                                                     <input type="number"
                                                     id="shortBreakTime"
                                                     value={shortBreakTime}
-                                                    onChange={handleChangeShortBreakTime} />
+                                                    onChange={handleChangeShortBreakTime}
+                                                    className="white-text" 
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <label htmlFor="pomodoroNumber">No. of Pomodoros</label>
+                                                <label className="white-text">No. of Pomodoros</label>
                                                 <div className="input-field col s12">
                                                     <input type="number" 
                                                     id="pomodoroNumber"
                                                     value={numberOfPomodoros}
-                                                    onChange={handleChangeNumberOfPomodoros} />
+                                                    onChange={handleChangeNumberOfPomodoros} 
+                                                    className="white-text"
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <label htmlFor="longBreak">Long Break Time (mins)</label>
+                                                <label className="white-text">Long Break Time (mins)</label>
                                                 <div className="input-field col s12">
                                                     <input type="number" 
                                                     id="longBreak"
                                                     value={longBreakTime}
-                                                    onChange={handleChangeLongBreakTime} />
+                                                    onChange={handleChangeLongBreakTime}
+                                                    className="white-text" 
+                                                    />
                                                 </div>
                                             </div>
                                         </form>
@@ -90,6 +98,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                                 <div className="card-action">
                                     <button 
                                         onClick={handleSubmit}
+                                        className="btn btn-small waves-effect waves-light hoverable accent-2 red"
                                     >
                                         Start Pomodoro
                                     </button>
