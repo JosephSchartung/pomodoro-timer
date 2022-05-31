@@ -24,7 +24,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
         <div className="AddTodoForm">
             <form>
                 <input className="white-text" type="text" value={desc} onChange={handleChange}/>
-                <button className="btn btn-small waves-effect waves-light hoverable accent-2 red" onClick={handleSubmit}>Add Task</button>
+                <button className="btn btn-small waves-effect waves-light hoverable transparent" onClick={handleSubmit}>Add Task</button>
             </form>
         </div>
 

@@ -74,7 +74,7 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
         <div className="container valign-wrapper center-align">
             <div className="row">
                 <div className="col s12">
-                    <div className="card red">
+                    <div className="card red" style={{borderRadius:"20px"}}>
                         <div className="card-content">
                             <span className="card-title white-text">
                                 <b>Pomodoros</b> Remaining: {pomodorosRemaining}
@@ -84,7 +84,7 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
                                         Current Phase: {currentPhase}
                                     </span>
                                 </div>
-                                <div className="row" style={{textAlign:"center"}}>
+                                <div className="row center-align">
                                     <span className="white-text">
                                         <h4>
                                             {
@@ -95,8 +95,8 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
                                     </span>
                                 </div>
                         </div>
-                        <div className="card-action">
-                            <button className="btn btn-small waves-effect waves-light hoverable accent-2 red" onClick={toggleTimer}>{timerTicking ? <i className="material-icons">pause</i> : <i className="material-icons">play_arrow</i>}</button>
+                        <div style={{borderRadius:"20px"}}className="card-action">
+                            <button className="btn btn-small waves-effect waves-light hoverable accent-2 transparent" onClick={toggleTimer}>{timerTicking ? <i className="material-icons">pause</i> : <i className="material-icons">play_arrow</i>}</button>
                         </div>
                     </div>
 

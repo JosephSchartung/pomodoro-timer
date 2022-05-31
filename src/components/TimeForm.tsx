@@ -44,7 +44,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m6 offset-m3">
-                            <div className="card red">
+                            <div className="card red" style={{borderRadius:"20px"}}>
                                 <div className="card-content">
                                     <span className="card-title white-text">
                                         <b>Set</b> Pomodoro
@@ -95,7 +95,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
                                             </div>
                                         </form>
                                 </div>
-                                <div className="card-action">
+                                <div className="card-action" style={{borderRadius:"20px"}}>
                                     <button 
                                         onClick={handleSubmit}
                                         className="btn btn-small waves-effect waves-light hoverable accent-2 red"

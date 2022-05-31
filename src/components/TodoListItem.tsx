@@ -29,14 +29,14 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, removeTodo, up
                 setShowInput(!showInput)
                 
             }}
-                className="btn-floating btn-small waves-effect waves-light green"
+                className="btn-floating btn-small hoverable waves-effect waves-light green"
             >
                 <i className="material-icons">edit</i>
             </button>
             <button onClick={()=> {
                 removeTodo(todo);
             }}
-                className="btn-floating btn-small waves-effect waves-light accent-4 red"
+                className="btn-floating btn-small hoverable waves-effect waves-light accent-4 red"
             >
                 <i className="material-icons">delete</i>
             </button>

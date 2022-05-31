@@ -2,17 +2,19 @@ import React from "react";
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="page-footer" style={{
-            borderTop:'1px solid #ddd',
-            height:'60px',
-            lineHeight:'60px',
+        <footer className="page-footer red" style={{
+            position:"fixed",
+            left:0,
+            bottom:0,
+            right:0,
         }}>
-            <div className="container">
+            <div className="container white-text center-align">
                 <div className="row">
                     <div className="col 16 s12">
                         <span>
                             &copy; Joseph Schartung 2022
-                        </span>
+                        </span>{' '}
+                        <a className="white-text" style={{textDecorationLine:'underline'}} href="https://github.com/josephschartung/pomodoro-timer" target="_blank" rel="noopener noreferrer">Github</a>
                     </div>
                 </div>
             </div>
