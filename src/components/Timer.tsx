@@ -8,7 +8,15 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
     const convertTimeToArray = (time:number) => {
         return [time, 0];
     }
-    const phases = ["Work Time", "Short Break Time", "Long Break Time"];
+    const convertPhasesToObject = (phases:string[], times:number[]) => {
+        const timePhases: { [key:string] : number} = {};
+        phases.forEach((phase, idx) => {
+            timePhases[phase] = times[idx];
+        })
+        return timePhases;
+    }
+    const phases:string[] = ["Work Time", "Short Break Time", "Long Break Time"];
+    
     const navigate = useNavigate();
 
     const { workTime, shortBreakTime, numberOfPomodoros, longBreakTime } = pomodoro;
@@ -17,10 +25,11 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
     const [currentPhase, setCurrentPhase] = useState(phases[0]);
     const [timerTicking, setTimerTicking] = useState(false); 
 
+    const timePhases = convertPhasesToObject(phases, [workTime, shortBreakTime, longBreakTime]);
+
     const tick = () => {
         if (timeRemaining[0] === 0 && timeRemaining[1] === 0){
             reset();
-            newTime();
         } else if(timeRemaining[1] === 0) {
             setTimeRemaining([timeRemaining[0]-1, 59]);
         } else {
@@ -31,28 +40,16 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
     const toggleTimer = () => {
         setTimerTicking(!timerTicking);
     }
-    const newTime = () => {
-        switch (currentPhase) {
-            case phases[0]:
-                setTimeRemaining(convertTimeToArray(workTime));
-                break;
-            case phases[1]:
-                setTimeRemaining(convertTimeToArray(shortBreakTime));
-                break;
-            case phases[2]:
-                setTimeRemaining(convertTimeToArray(longBreakTime));
-                break;
-            default:
-                break;
-        }
-    }
     const reset = () => {
         switch (currentPhase) {
             case phases[0]:
-                setCurrentPhase(pomodorosRemaining === 0 ? phases[2] : phases[1]);
+                const nextPhase = pomodorosRemaining === 0 ? phases[2] : phases[1];
+                setCurrentPhase(nextPhase);
+                setTimeRemaining(convertTimeToArray(timePhases[nextPhase]));
                 break;
             case phases[1]:
                 setCurrentPhase(phases[0]);
+                setTimeRemaining(convertTimeToArray(timePhases[phases[0]]));
                 setPomodorosRemaining(pomodorosRemaining-1);
                 break;
             case phases[2]:
