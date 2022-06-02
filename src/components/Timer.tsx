@@ -90,12 +90,13 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
                                 </h4>
                             </span>
                         </div>
+                        <div className="card-action">
+                            <button style={{ borderRadius:"20px"}} className="btn-small waves-effect waves-light hoverable accent-2 transparent" onClick={toggleTimer}>
+                                {timerTicking ? <i className="material-icons">pause</i>: <i className="material-icons">play_arrow</i>}
+                            </button>
+                        </div>
                     </div>
-                    <div style={{ borderRadius:"20px"}} className="card-action">
-                        <button style={{ borderRadius:"20px"}} className="btn-small waves-effect waves-light hoverable accent-2 transparent" onClick={toggleTimer}>
-                            {timerTicking ? <i className="material-icons">pause</i>: <i className="material-icons">play_arrow</i>}
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </div>
