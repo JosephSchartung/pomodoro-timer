@@ -68,35 +68,34 @@ export const Timer: React.FC<Props> = ({pomodoro}) => {
     });
 
     return (
-        <div className="container valign-wrapper center-align">
+        <div style={{width:"33em"}} className="container">
             <div className="row">
-                <div className="col s12">
-                    <div className="card red" style={{borderRadius:"20px"}}>
-                        <div className="card-content">
-                            <span className="card-title white-text">
-                                <b>Pomodoros</b> Remaining: {pomodorosRemaining}
+                <div style={{borderRadius:"20px"}}className="card center-align red">
+                    <div className="card-content">
+                        <span className="card-title center-align white-text">
+                            <b>Pomodoros</b> Remaining: {pomodorosRemaining}
+                        </span>
+                        <div className="row">
+                            <span className="white-text">
+                                {currentPhase}
                             </span>
-                                <div className="row">
-                                    <span className="white-text">
-                                        Current Phase: {currentPhase}
-                                    </span>
-                                </div>
-                                <div className="row center-align">
-                                    <span className="white-text">
-                                        <h4>
-                                            {
-                                                `${timeRemaining[0].toString().padStart(2,'0')}: 
-                                                ${timeRemaining[1].toString().padStart(2,'0')}`
-                                            }
-                                        </h4>
-                                    </span>
-                                </div>
                         </div>
-                        <div style={{borderRadius:"20px"}}className="card-action">
-                            <button className="btn btn-small waves-effect waves-light hoverable accent-2 transparent" onClick={toggleTimer}>{timerTicking ? <i className="material-icons">pause</i> : <i className="material-icons">play_arrow</i>}</button>
+                        <div style={{borderRadius:"20px", margin:"auto", width:"50%", display:"flex", justifyContent:"center", padding:"10px"}}className="card-panel red accent-2">
+                            <span className="white-text">
+                                <h4>
+                                {
+                                    `${timeRemaining[0].toString().padStart(2,'0')}:
+                                    ${timeRemaining[1].toString().padStart(2,'0')}`
+                                }
+                                </h4>
+                            </span>
                         </div>
                     </div>
-
+                    <div style={{ borderRadius:"20px"}} className="card-action">
+                        <button style={{ borderRadius:"20px"}} className="btn-small waves-effect waves-light hoverable accent-2 transparent" onClick={toggleTimer}>
+                            {timerTicking ? <i className="material-icons">pause</i>: <i className="material-icons">play_arrow</i>}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

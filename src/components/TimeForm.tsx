@@ -39,7 +39,7 @@ export const TimeForm: React.FC<Props> = ({addPomodoro }) => {
         navigate('/dashboard');
     }
     return(
-        <div className="container"style={{width:"75vw"}}>
+        <div className="container"style={{width:"33em"}}>
             <div className="row">
                 <div style={{borderRadius:"20px"}}className="card center-align red">
                     <div className="card-content">
