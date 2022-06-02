@@ -49,21 +49,19 @@ export const Todos: React.FC = () => {
 
 
     return (
-
-        <div className="container valign-wrapper center-align">
+        <div style={{width:"33em"}} className="container">
             <div className="row">
-                <div className="col s12">
-                    <div className="card red" style={{borderRadius:"20px"}}>
-                        <div className="card-content">
-                            <span className="card-title white-text">
-                                <b>Set</b> Tasks
-                            </span>
-                            <div className="row center-align">
-                                <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
-                            </div>
+                <div style={{borderRadius:"20px"}}className="card center-align red">
+                    <div className="card-content">
+                        <span className="card-title center-align white-text">
+                            <b>Set</b> Your Tasks
+                        </span>
+                        <div style={{borderRadius:"20px", margin:"auto", width:"50%", display:"flex", justifyContent:"center", padding:"10px"}} className="card-panel red accent-2">
+                            <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
                         </div>
-                        <div className="card-action" style={{borderRadius:"20px"}}>
-                            <AddTodoForm addTodo={addTodo}/>
+
+                        <div className="card-action">
+                            <AddTodoForm addTodo={addTodo} />
                         </div>
                     </div>
                 </div>
