@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Landing = () => {
+export const Landing: React.FC = () => {
     return(
         <div style={{
             height:"100vh"
