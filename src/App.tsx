@@ -19,17 +19,17 @@ const App: React.FC = () => {
   }
 
   return (
-    <Router>
-      <div>
-        <Navbar />
+    <div className="App">
+      <Router>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/start" element={<TimeForm addPomodoro={addPomodoro}/>}/>
-          <Route path="/dashboard" element={<Dashboard pomodoroInfo={pomodoroInfo}/>}/>
+          <Route path="/start" element={<TimeForm addPomodoro={addPomodoro}/>} />
+          <Route path="/dashboard" element={<Dashboard pomodoroInfo={pomodoroInfo} />} />
         </Routes>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+      <Footer />
+    </div>
   );
 }
 

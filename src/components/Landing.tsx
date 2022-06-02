@@ -2,7 +2,9 @@ import React from 'react';
 
 export const Landing = () => {
     return(
-        <div style={{ height:"50vh" }} className="container valign-wrapper">
+        <div style={{
+            height:"100vh"
+        }}className="container valign-wrapper">
             <div className="row">
                 <div className="col s12 center-align white-text">
                     <h4>

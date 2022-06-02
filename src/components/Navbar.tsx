@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 export const Navbar: React.FC = () => {
     
     return (
-        <div className="navbar-fixed">
+        <div style={{
+            height:"10vh"
+        }}className="navbar-fixed">
             <nav>
                 <div className="nav-wrapper red">
                     <Link to="/" className="brand-logo center">Pomodoro</Link>

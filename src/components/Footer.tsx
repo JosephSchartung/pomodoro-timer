@@ -2,12 +2,7 @@ import React from "react";
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="page-footer red" style={{
-            position:"fixed",
-            left:0,
-            bottom:0,
-            right:0,
-        }}>
+        <footer className="page-footer transparent">
             <div className="container white-text center-align">
                 <div className="row">
                     <div className="col 16 s12">
