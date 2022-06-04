@@ -19,3 +19,4 @@ type RemoveTodo = (selectedTodo: Todo) => void;
 type UpdateTodo = (selectedTodo: Todo, updatedTodo: Todo) => void;
 type ToggleShowAbout = () => void;
 type ToggleShowSettings = () => void;
+type UpdateBgColor = (newBgColor: string) => void;

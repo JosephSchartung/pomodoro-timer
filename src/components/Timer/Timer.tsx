@@ -4,22 +4,30 @@ import './index.css';
 
 interface Props {
     pomodoro: Pomodoro,
-
+    updateBgColor: UpdateBgColor
 };
 
-export const Timer:React.FC<Props> = ({ pomodoro }) => {
+export const Timer:React.FC<Props> = ({ pomodoro, updateBgColor }) => {
     const convertTimeToArray = (time:number) => {
         return [time, 0];
     }
-    const convertPhasesToObject = (phases: string[], times:number[]) => {
+    const mapPhasesToTime = (phases: string[], times:number[]) => {
         const timePhases: { [key:string ] : number} = {};
         phases.forEach((phase, idx) => {
             timePhases[phase] = times[idx];
         })
         return timePhases;
     }
+    const mapPhasesToColor = (phases:string[], colors: string[]) => {
+        const colorPhases: { [key: string] : string} = {};
+        phases.forEach((phase, idx) => {
+            colorPhases[phase] = colors[idx];
+        })
+        return colorPhases
+    }
 
     const phases: string[] = ["Work Time", "Short Break Time", "Long Break Time"];
+    const colors: string[] = ["red accent-2", "light-blue darken-2", "teal lighten-2"]
 
     const { workTime, shortBreakTime, numberOfPomodoros, longBreakTime } = pomodoro;
 
@@ -29,7 +37,8 @@ export const Timer:React.FC<Props> = ({ pomodoro }) => {
     const [curPhase, setCurPhase] = useState(phases[0]);
     const [timerTicking, setTimerTicking] = useState(false);
 
-    const timePhases = convertPhasesToObject(phases, [workTime, shortBreakTime, longBreakTime]);
+    const timePhases = mapPhasesToTime(phases, [workTime, shortBreakTime, longBreakTime]);
+    const colorPhases = mapPhasesToColor(phases, colors);
 
     const tick = () => {
         if( timeRemaining[0] === 0 && timeRemaining[1] === 0 ){
@@ -50,16 +59,19 @@ export const Timer:React.FC<Props> = ({ pomodoro }) => {
                 const nextPhase = pomodorosRemaining === 0 ? phases[2] : phases[1];
                 setCurPhase(nextPhase);
                 setTimeRemaining(convertTimeToArray(timePhases[nextPhase]));
+                updateBgColor(colorPhases[nextPhase])
                 break;
             case phases[1]:
                 setCurPhase(phases[0]);
                 setTimeRemaining(convertTimeToArray(timePhases[phases[0]]));
                 setPomodorosRemaining(pomodorosRemaining-1);
+                updateBgColor(colorPhases[phases[0]]);
                 break;
             case phases[2]:
                 setCurPhase(phases[0]);
                 setTimeRemaining(convertTimeToArray(timePhases[phases[0]]));
                 setPomodorosRemaining(initialPomodoros);
+                updateBgColor(colorPhases[0]);
                 break;
             default:
                 break;
