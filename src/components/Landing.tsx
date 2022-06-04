@@ -4,8 +4,8 @@ export const Landing: React.FC = () => {
     return(
         <div style={{
             height:"100vh"
-        }}className="container valign-wrapper">
-            <div className="row">
+        }} className="container valign-wrapper">
+            <div className="row red">
                 <div className="col s12 center-align white-text">
                     <h4>
                         <b>Pomodoro</b> timer
