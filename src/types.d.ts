@@ -5,7 +5,7 @@ interface Pomodoro {
     longBreakTime: number,
 };
 
-interface Todo {
+interface Task {
     description: string,
     completed: boolean,
     id: number
@@ -13,10 +13,10 @@ interface Todo {
 
 
 type AddPomodoro = (pomodoroInfo: Pomodoro) => void;
-type ToggleTodo = (selectedTodo: Todo) => void;
-type AddTodo = (todoInfo: Todo) => void;
-type RemoveTodo = (selectedTodo: Todo) => void;
-type UpdateTodo = (selectedTodo: Todo, updatedTodo: Todo) => void;
+type ToggleTask = (selectedTask: Task) => void;
+type AddTask = (taskInfo: task) => void;
+type RemoveTask = (selectedTask: Task) => void;
+type UpdateTask = (selectedtask: Task, updatedTask: Task) => void;
 type ToggleShowAbout = () => void;
 type ToggleShowSettings = () => void;
 type UpdateBgColor = (newBgColor: string) => void;
