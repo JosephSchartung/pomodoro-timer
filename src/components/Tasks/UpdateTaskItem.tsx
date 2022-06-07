@@ -25,8 +25,21 @@ export const UpdateTaskListItem: React.FC<Props> = ({ task, updateTask }) => {
         setCurTask(updatedTask);
     }
     return (
-        <form>
-            
-        </form>
+        <div className="UpdateTaskItem">
+            <form>
+                <input type="text"
+                    className="white-text"
+                    value={text}
+                    onChange={handleChange}    
+                />
+                <button 
+                    type="button"
+                    className="btn-small waves-effect waves-light hoverable transparent"
+                    onClick={handleSubmit}
+                >
+                    Update Task
+                </button>
+            </form>
+        </div>
     )
 }

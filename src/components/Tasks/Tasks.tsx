@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { AddTaskForm } from "./AddTaskForm";
 import './index.css';
+import { TaskList } from "./TaskList";
 
 interface Props {
-
+    
 };
 
 export const Tasks: React.FC<Props> = ({}) => {
     const initialTasks: Task[] = []
     const [tasks, setTasks] = useState(initialTasks);
 
-    const toggleTasks = (selectedTask: Task) => {
+    const toggleTask: ToggleTask = (selectedTask: Task) => {
         const newTasks = tasks.map( (task: Task) => {
             if(task === selectedTask) {
                 return {
@@ -41,7 +43,23 @@ export const Tasks: React.FC<Props> = ({}) => {
 
     return (
         <div className="Tasks">
-            
+            <div className="container">
+                <div className="row">
+                    <div className="card transparent">
+                        <div className="card-content">
+                            <span className="card-title">
+                                <b>Set</b> Tasks
+                            </span>
+                            <div className="card-panel">
+                                <TaskList tasks={tasks} toggleTask={toggleTask} removeTask={removeTask} updateTask={updateTask} />
+                            </div>
+                            <div className="card-action">
+                                <AddTaskForm addTask={addTask} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
