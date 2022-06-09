@@ -11,7 +11,6 @@ export const AddTaskForm: React.FC<Props> =({ addTask }) => {
         setDesc(e.target.value);
     };
     const handleSubmit = (e:any) => {
-        e.preventDefault();
         const newTask: Task = {
             description: desc,
             completed:false,
@@ -20,13 +19,16 @@ export const AddTaskForm: React.FC<Props> =({ addTask }) => {
         addTask(newTask);
         setDesc('');
     }
+    const submitHandler = (e:any)=> {
+        e.preventDefault();
+    }
 
     return (
         <div className="AddTaskForm center-align">
-            <form>
+            <form onSubmit={submitHandler}>
                 <input
                     type="text"
-                    className="white-text" 
+                    className="white" 
                     value={desc}
                     onChange={handleChange}
                 />

@@ -4,10 +4,11 @@ import './index.css';
 
 interface Props {
     pomodoro: Pomodoro,
+    colors: string[],
     updateBgColor: UpdateBgColor
 };
 
-export const Timer:React.FC<Props> = ({ pomodoro, updateBgColor }) => {
+export const Timer:React.FC<Props> = ({ pomodoro, colors, updateBgColor }) => {
     const convertTimeToArray = (time:number) => {
         return [time, 0];
     }
@@ -27,7 +28,6 @@ export const Timer:React.FC<Props> = ({ pomodoro, updateBgColor }) => {
     }
 
     const phases: string[] = ["Work Time", "Short Break Time", "Long Break Time"];
-    const colors: string[] = ["red accent-2", "light-blue darken-2", "teal lighten-2"]
 
     const { workTime, shortBreakTime, numberOfPomodoros, longBreakTime } = pomodoro;
 

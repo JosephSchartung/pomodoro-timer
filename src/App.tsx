@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Navbar, Timer, About, Tasks, Footer } from './components';
 const App: React.FC = () => {
+    const colors: string[] = ["red accent-2", "light-blue darken-2", "teal lighten-2"];
+
     const [bgColor, setBgColor] = useState('red accent-2');
     const [showAbout, setShowAbout] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -14,10 +16,10 @@ const App: React.FC = () => {
         setShowSettings(!showSettings);
     };
     const defaultPomodoro: Pomodoro = {
-        workTime:1,
-        shortBreakTime:2,
-        numberOfPomodoros:1,
-        longBreakTime:3,
+        workTime:25,
+        shortBreakTime:5,
+        numberOfPomodoros:4,
+        longBreakTime:30,
     }
     return (
         <div className={`App ${bgColor}`}>
@@ -27,7 +29,7 @@ const App: React.FC = () => {
                     {showAbout && <About toggleShowAbout={toggleShowAbout} />}
                 </div>
                 <div className="row">
-                    <Timer pomodoro={defaultPomodoro} updateBgColor={updateBgColor} />
+                    <Timer pomodoro={defaultPomodoro} colors={colors} updateBgColor={updateBgColor} />
                 </div>
                 <div className="row">
                     <Tasks/>
