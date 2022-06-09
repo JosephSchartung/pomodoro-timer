@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Timer, About, Tasks } from './components';
+import { Navbar, Timer, About, Tasks, Footer } from './components';
 const App: React.FC = () => {
     const [bgColor, setBgColor] = useState('red accent-2');
     const [showAbout, setShowAbout] = useState(false);
@@ -20,15 +20,20 @@ const App: React.FC = () => {
         longBreakTime:3,
     }
     return (
-        <div style={{
-            height:"100vh"
-        }}className={`App ${bgColor}`}>
+        <div className={`App ${bgColor}`}>
             <Navbar toggleShowAbout={toggleShowAbout} toggleShowSettings={toggleShowSettings} color={bgColor} />
-            <div className="container">
-                {showAbout && <About toggleShowAbout={toggleShowAbout} />}
-                <Timer pomodoro={defaultPomodoro} updateBgColor={updateBgColor} />
-                <Tasks/>
+            <div className={`container ${bgColor}`}>
+                <div className="row">
+                    {showAbout && <About toggleShowAbout={toggleShowAbout} />}
+                </div>
+                <div className="row">
+                    <Timer pomodoro={defaultPomodoro} updateBgColor={updateBgColor} />
+                </div>
+                <div className="row">
+                    <Tasks/>
+                </div>
             </div>
+            <Footer color={bgColor}/>
         </div>
     )
 }
