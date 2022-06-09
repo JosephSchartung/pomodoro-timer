@@ -22,7 +22,7 @@ export const AddTaskForm: React.FC<Props> =({ addTask }) => {
     }
 
     return (
-        <div className="AddTaskForm">
+        <div className="AddTaskForm center-align">
             <form>
                 <input
                     type="text"
@@ -30,8 +30,9 @@ export const AddTaskForm: React.FC<Props> =({ addTask }) => {
                     value={desc}
                     onChange={handleChange}
                 />
-                <button style={{ borderRadius:"20px"}}
+                <button type="button" style={{ borderRadius:"20px"}}
                     className="btn-small waves-effect waves-light hoverable transparent"
+                    onClick={handleSubmit}
                 >
                     Add Task
                 </button>

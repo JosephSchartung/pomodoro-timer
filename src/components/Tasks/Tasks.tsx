@@ -46,11 +46,11 @@ export const Tasks: React.FC<Props> = ({}) => {
             <div className="container">
                 <div className="row">
                     <div className="card transparent">
-                        <div className="card-content">
-                            <span className="card-title">
+                        <div className="card-content center-align">
+                            <span className="card-title white-text">
                                 <b>Set</b> Tasks
                             </span>
-                            <div className="card-panel">
+                            <div className="card-panel transparent">
                                 <TaskList tasks={tasks} toggleTask={toggleTask} removeTask={removeTask} updateTask={updateTask} />
                             </div>
                             <div className="card-action">
