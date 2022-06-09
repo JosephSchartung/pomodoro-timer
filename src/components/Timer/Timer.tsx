@@ -13,9 +13,9 @@ export const Timer:React.FC<Props> = ({ pomodoro, colors, updateBgColor }) => {
         return [time, 0];
     }
     const mapPhasesToTime = (phases: string[], times:number[]) => {
-        const timePhases: { [key:string ] : number} = {};
+        const timePhases: { [key:string ] : number[]} = {};
         phases.forEach((phase, idx) => {
-            timePhases[phase] = times[idx];
+            timePhases[phase] = convertTimeToArray(times[idx]);
         })
         return timePhases;
     }
@@ -58,20 +58,21 @@ export const Timer:React.FC<Props> = ({ pomodoro, colors, updateBgColor }) => {
             case phases[0]:
                 const nextPhase = pomodorosRemaining === 0 ? phases[2] : phases[1];
                 setCurPhase(nextPhase);
-                setTimeRemaining(convertTimeToArray(timePhases[nextPhase]));
+                setTimeRemaining(timePhases[nextPhase]);
                 updateBgColor(colorPhases[nextPhase])
                 break;
             case phases[1]:
                 setCurPhase(phases[0]);
-                setTimeRemaining(convertTimeToArray(timePhases[phases[0]]));
+                setTimeRemaining(timePhases[phases[0]]);
                 setPomodorosRemaining(pomodorosRemaining-1);
                 updateBgColor(colorPhases[phases[0]]);
                 break;
             case phases[2]:
                 setCurPhase(phases[0]);
-                setTimeRemaining(convertTimeToArray(timePhases[phases[0]]));
+                setTimeRemaining(timePhases[phases[0]]);
                 setPomodorosRemaining(initialPomodoros);
-                updateBgColor(colorPhases[0]);
+                updateBgColor(colorPhases[phases[0]]);
+                toggleTimer();
                 break;
             default:
                 break;
