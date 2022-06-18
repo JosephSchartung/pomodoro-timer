@@ -39,60 +39,60 @@ export const Settings:React.FC<Props> = ({ addPomodoro }) => {
         <div className="Settings">
             <div className="container">
                 <div className="row">
-                    <div className="card">
+                    <div className="card transparent">
                         <div className="card-content">
-                            <span className="card-title center-align">
+                            <span className="card-title center-align white-text">
                                 <b>Change</b> Pomodoro Settings
                             </span>
                             <form>
                                 <div className="row">
                                     <div className="card-panel col">
-                                        <label className="white-text">
+                                        <label className="black-text">
                                             Working Time (minutes)
                                         </label>
                                         <div className="input-field">
                                             <input type="number"
                                                 value={workTime}
                                                 onChange={handleChangeWorkTime}
-                                                className="white-text"
+                                                className="black-text"
                                             />
                                         </div>
                                     </div>
                                     <div className="card-panel col">
-                                        <label className="white-text">
+                                        <label className="black-text">
                                             Short Break Time (minutes)
                                         </label>
                                         <div className="input-field">
                                             <input type="number"
                                                 value={shortBreakTime}
                                                 onChange={handleChangeShortBreakTime}
-                                                className="white-text"
+                                                className="black-text"
                                             />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="card-panel col">
-                                        <label className="white-text">
+                                        <label className="black-text">
                                             Number Of Pomodoros
                                         </label>
                                         <div className="input-field">
                                             <input type="number"
-                                                value={shortBreakTime}
-                                                onChange={handleChangeShortBreakTime}
-                                                className="white-text"
+                                                value={numberOfPomodoros}
+                                                onChange={handleChangeNumberOfPomodoros}
+                                                className="black-text"
                                             />
                                         </div>
                                     </div>
                                     <div className="card-panel col">
-                                        <label className="white-text">
+                                        <label className="black-text">
                                             Long Break Time (minutes)
                                         </label>
-                                        <div className="input-field">
+                                        <div className="input-field black-text">
                                             <input type="number"
                                                 value={longBreakTime}
                                                 onChange={handleChangeLongBreakTime}
-                                                className="white-text"
+                                                className="black-text"
                                             />
                                         </div>
                                     </div>                
